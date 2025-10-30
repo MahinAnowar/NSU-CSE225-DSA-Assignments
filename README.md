@@ -56,8 +56,27 @@ The project is modularized into several class files:
 
 ---
 
-## Assignment 03: [Title of Next Assignment] (Coming Soon)
+## Assignment 02: Singly Linked List Implementation
 
-* [Brief description of the next assignment]
-* [Features...]
-* [Code Structure...]
+This project is a C++ implementation of a singly linked list. The program uses an Object-Oriented Programming (OOP) approach by defining a `LinkedList` class to manage node operations and provides a console menu for user interaction.
+
+### Core Features
+* **Insert at Beginning:** Adds a new node to the front of the list.
+* **Insert at End:** Appends a new node to the end of the list.
+* **Insert in Sorted Order:** Inserts a node in its correct position to maintain an ascending sorted list.
+* **Delete from Beginning:** Removes the first node (head) of the list.
+* **Delete from End:** Removes the last node (tail) of the list.
+* **Search for Item:** Traverses the list to find a specific value.
+* **Display List:** Prints all elements in the list from head to tail.
+
+### Code Structure
+The code is organized into three files for modularity:
+* `LinkedList.h`: The header file defining the `Node` structure and the `LinkedList` class interface.
+* `LinkedList.cpp`: The source file containing the implementation of the `LinkedList` class's member functions.
+* `main.cpp`: The driver file that contains the `main()` function and the user-facing console menu.
+
+### OOP Concepts Applied
+* **Encapsulation:** The `head` pointer is `private` within the `LinkedList` class. All list manipulations are performed through `public` member functions, protecting the list's internal state.
+* **Abstraction:** The `main` function interacts with a simple API (e.g., `list.insertAtEnd(10)`) without needing to understand the underlying pointer manipulation, traversal, or memory allocation.
+* **Dynamic Memory Management:** The list uses `new` to create `Node` objects on the heap during insertion and `delete` to free that memory during deletion, demonstrating manual memory control.
+* **Constructors & Destructors (RAII):** The class has a constructor (`LinkedList()`) to initialize the `head` pointer to `nullptr`. It also has a destructor (`~LinkedList()`) that automatically traverses and deletes all nodes, preventing memory leaks when the list object goes out of scope.
