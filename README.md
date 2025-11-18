@@ -80,3 +80,29 @@ The code is organized into three files for modularity:
 * **Abstraction:** The `main` function interacts with a simple API (e.g., `list.insertAtEnd(10)`) without needing to understand the underlying pointer manipulation, traversal, or memory allocation.
 * **Dynamic Memory Management:** The list uses `new` to create `Node` objects on the heap during insertion and `delete` to free that memory during deletion, demonstrating manual memory control.
 * **Constructors & Destructors (RAII):** The class has a constructor (`LinkedList()`) to initialize the `head` pointer to `nullptr`. It also has a destructor (`~LinkedList()`) that automatically traverses and deletes all nodes, preventing memory leaks when the list object goes out of scope.
+
+---
+
+## Assignment 03: Balanced Parentheses Checking
+
+This project is a C++ solution to the classic "Balanced Parentheses" problem. Instead of using the standard library, it implements a custom `CharStack` class from scratch to validate the syntax of mathematical expressions or code snippets.
+
+### Core Features
+* **Custom Stack Implementation:** A robust character stack created manually without using `std::stack`.
+* **Push & Pop Operations:** Implements standard LIFO (Last-In-First-Out) logic to manage nested parentheses.
+* **Balance Validation:** Logic to detect correctly matched pairs `()` and identify unbalanced inputs (missing closing or extra opening brackets).
+* **Dynamic Sizing:** The stack is dynamically allocated based on the length of the input string to optimize memory usage.
+* **Multiple Use Case Testing:** The driver program runs a continuous loop, allowing users to test multiple expressions in a single session.
+
+### Code Structure
+The code is organized into three files for modularity:
+* `Stack.h`: The header file defining the `CharStack` class and its member functions.
+* `Stack.cpp`: The source file containing the implementation of the stack operations (`push`, `pop`, `isEmpty`, `isFull`).
+* `main.cpp`: The driver file that uses the `CharStack` to implement the balancing algorithm and handles user input.
+
+### OOP Concepts Applied
+* **Encapsulation:** The `CharStack` class bundles the data (array pointer, top index, capacity) and methods together. Key data members are `private` to prevent external corruption of the stack state.
+* **Abstraction:** The complex logic of array index management is hidden. The main program interacts with the stack using high-level commands like `push()` and `pop()`.
+* **Dynamic Memory Management:** The class demonstrates manual memory management:
+    * **Constructor:** Dynamically allocates memory (`new char[]`) for the stack.
+    * **Destructor:** Automatically frees that memory (`delete[]`) when the stack object goes out of scope to prevent memory leaks.
